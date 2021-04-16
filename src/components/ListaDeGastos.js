@@ -26,8 +26,7 @@ import { Link } from "react-router-dom";
 import Boton from "../elements/Boton";
 import { format, fromUnixTime } from "date-fns";
 import { es } from "date-fns/locale";
-import borrarGasto from '../firebase/borrarGasto'
-
+import borrarGasto from "../firebase/borrarGasto";
 
 export const ListaDeGastos = () => {
   const [gastos, obtenerMasGastos, hayMasPorCargar] = useObtenerGastos();
@@ -51,7 +50,6 @@ export const ListaDeGastos = () => {
     }
   };
 
-  console.log(gastos);
   return (
     <>
       <Helmet>
@@ -81,7 +79,7 @@ export const ListaDeGastos = () => {
                   <BotonAccion as={Link} to={`/editar/${gasto.id}`}>
                     <IconoEditar />
                   </BotonAccion>
-                  <BotonAccion onClick={()=> borrarGasto(gasto.id)}>
+                  <BotonAccion onClick={() => borrarGasto(gasto.id)}>
                     <IconoBorrar />
                   </BotonAccion>
                 </ContenedorBotones>
